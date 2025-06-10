@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +12,17 @@
             --color-secondary: #F9C80E;
             --color-accent: #FF6F61;
         }
-
         body {
             background-color: #fff8f0;
             color: #333;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         .navbar {
             background-color: var(--color-primary);
         }
-
-        .navbar-brand,
-        .nav-link {
+        .navbar-brand, .nav-link {
             color: white !important;
         }
-
         .hero-section {
             background: url('https://images.unsplash.com/photo-1615903494117-47b06d40e28e') center/cover no-repeat;
             height: 80vh;
@@ -36,18 +30,15 @@
             align-items: center;
             justify-content: center;
             color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
         }
-
         .hero-section h1 {
             font-size: 3rem;
         }
-
         .product-card img {
             height: 200px;
             object-fit: cover;
         }
-
         .cart {
             position: fixed;
             top: 80px;
@@ -59,22 +50,24 @@
             z-index: 1000;
             display: none;
         }
-
         .cart h5 {
             margin-bottom: 10px;
         }
-
         .cart-item {
             font-size: 14px;
         }
-
         .btn-cart {
             background-color: var(--color-accent);
             color: white;
         }
+        .contador-visitas {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -87,8 +80,7 @@
                     <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                    <li class="nav-item"><button class="btn btn-cart ms-2" onclick="toggleCart()"><i
-                                class="fas fa-shopping-cart"></i> Carrito (<span id="cart-count">0</span>)</button></li>
+                    <li class="nav-item"><button class="btn btn-cart ms-2" onclick="toggleCart()"><i class="fas fa-shopping-cart"></i> Carrito (<span id="cart-count">0</span>)</button></li>
                 </ul>
             </div>
         </div>
@@ -114,40 +106,37 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card product-card">
-                        <img src="Imagenes/mochila.jpeg" class="card-img-top"
-                            alt="Mochila Wayuu">
+                        <img src="Imagenes/mochila.jpeg" class="card-img-top" alt="Mochila Wayuu">
                         <div class="card-body">
                             <h5 class="card-title">Mochila Wayuu</h5>
                             <p class="card-text">Hecha a mano por artesanas de La Guajira.</p>
-                            <button class="btn btn-primary" onclick="addToCart('Mochila Wayuu', 120000)">Añadir al
-                                carrito</button>
+                            <button class="btn btn-primary" onclick="addToCart('Mochila Wayuu', 120000)">Añadir al carrito</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card product-card">
-                        <img src="Imagenes/images (1).jpeg" class="card-img-top"
-                            alt="Pulsera Wayuu">
+                        <img src="Imagenes/images (1).jpeg" class="card-img-top" alt="Pulsera Wayuu">
                         <div class="card-body">
                             <h5 class="card-title">Sombrero Wayuu</h5>
                             <p class="card-text">Diseños coloridos y únicos.</p>
-                            <button class="btn btn-primary" onclick="addToCart('Pulsera Wayuu', 25000)">Añadir al
-                                carrito</button>
+                            <button class="btn btn-primary" onclick="addToCart('Pulsera Wayuu', 25000)">Añadir al carrito</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card product-card">
-                        <img src="Imagenes/images.jpeg" class="card-img-top"
-                            alt="Hamaca Wayuu">
+                        <img src="Imagenes/images.jpeg" class="card-img-top" alt="Hamaca Wayuu">
                         <div class="card-body">
-                            <h5 class="card-title">Tinajas Wayuu</h5>
-                            <p class="card-text">Hechas exclusivamente con barro al estilo Wayuu.</p>
-                            <button class="btn btn-primary" onclick="addToCart('Hamaca Wayuu', 180000)">Añadir al
-                                carrito</button>
+                            <h5 class="card-title">Mucura Wayuu</h5>
+                            <p class="card-text">Tinajas echas con barro al estilo Wayuu.</p>
+                            <button class="btn btn-primary" onclick="addToCart('Hamaca Wayuu', 180000)">Añadir al carrito</button>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="contador-visitas">
+                Visitas al sitio: <span id="visit-count">0</span>
             </div>
         </div>
     </section>
@@ -155,9 +144,7 @@
     <section id="nosotros" class="bg-light py-5">
         <div class="container">
             <h2 class="text-center mb-4">Sobre Nosotros</h2>
-            <p class="text-center">Somos una comunidad de artesanas Wayuu que preserva las tradiciones a través del
-                tejido ancestral. Cada pieza cuenta una historia y representa una conexión con nuestra tierra y cultura.
-            </p>
+            <p class="text-center">Somos una comunidad de artesanas Wayuu que preserva las tradiciones a través del tejido ancestral. Cada pieza cuenta una historia y representa una conexión con nuestra tierra y cultura.</p>
         </div>
     </section>
 
@@ -210,8 +197,21 @@
             cart.length = 0;
             updateCart();
         }
+
+        // Contador de visitas con localStorage
+        function countVisits() {
+            let visits = localStorage.getItem('visitCount');
+            if (!visits) visits = 0;
+            visits++;
+            localStorage.setItem('visitCount', visits);
+            document.getElementById('visit-count').textContent = visits;
+        }
+
+        // Llamar al contador de visitas al cargar la página
+        window.onload = function () {
+            countVisits();
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
